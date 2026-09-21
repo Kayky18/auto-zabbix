@@ -123,7 +123,7 @@ status
 
 # Importa schema inicial do Zabbix
 echo -e "${BRANCO}🔄 Importando banco de dados do Zabbix:"
-zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -u zabbix -p"${DB_PASS}" zabbix &>/dev/null
+zcat /usr/share/zabbix/sql-script/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -u zabbix -p"${DB_PASS}" zabbix &>/dev/null
 status
 
 # Restaura config de binlogs e define idioma no banco

@@ -106,7 +106,7 @@ echo
 # Cria base de dados e altera autenticação do root
 echo -e "${BRANCO}📦 Criando banco de dados Zabbix:"
 mysql -u root <<EOF &>/dev/null
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '${MYSQL_ROOT_PASS}';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY '${MYSQL_ROOT_PASS}';
 FLUSH PRIVILEGES;
 CREATE DATABASE IF NOT EXISTS zabbix CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 EOF
